@@ -1,0 +1,4 @@
+user: root
+pass: BT585fhfw7adkW3y
+
+mongodb+srv://root:<password>@cluster0.qaxeh.mongodb.net/<dbname>?retryWrites=true&w=majority
