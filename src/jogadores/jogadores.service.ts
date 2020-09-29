@@ -67,7 +67,7 @@ export class JogadoresService {
         const jogadorEncontrado = await this.jogadorModel.findOne({_id}).exec();
 
         if (!jogadorEncontrado) {
-            throw new NotFoundException(`Jogador com email ${_id} não encontrado`)
+            throw new NotFoundException(`Jogador com _id ${_id} não encontrado`)
         }
         
         return jogadorEncontrado;
