@@ -1,8 +1,7 @@
-import { IsString, IsNotEmpty, IsArray, ArrayMinSize } from "class-validator";
+import { IsString, IsNotEmpty, IsArray, ArrayMinSize } from 'class-validator';
 import { Evento } from "../interfaces/categoria.interface";
 
-
-export class CriarCategoriaDto {
+export class CriarCategoriaDto{
 
     @IsString()
     @IsNotEmpty()
@@ -15,5 +14,4 @@ export class CriarCategoriaDto {
     @IsArray()
     @ArrayMinSize(1)
     eventos: Array<Evento>
-
 }
