@@ -5,12 +5,15 @@ import { JogadoresService } from './jogadores.service'
 import { Jogador } from './interfaces/jogador.interface'
 import { ValidacaoParametrosPipe } from '../common/pipes/validacao-parametros.pipe'
 
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+@ApiTags("User")
 @Controller('api/v1/jogadores')
 export class JogadoresController {
 
     constructor(private readonly jogadoresService: JogadoresService) {}
 
+    @ApiResponse({ status: 201 })
     @Post()
     @UsePipes(ValidationPipe)
     async criarJogador(
@@ -31,6 +34,7 @@ export class JogadoresController {
     Passamos a utilizar query parameters com o verbo GET
     */
 
+    @ApiResponse({ status: 201 })
     @Get()
     async consultarJogadores(
         @Query('idJogador') _id: string): Promise<Jogador[] | Jogador> {
